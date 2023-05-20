@@ -1,0 +1,16 @@
+<h1>All Astronauts</h1>
+<% @astronauts.each do |astro| %>
+  <ul id= "astro_id-<%= astro.id %>">
+    <li>Name: <%= astro.name %></li>
+    <li>Age: <%= astro.age %></li>
+    <li>Job: <%= astro.job %></li>
+    <li>Total Time in Space: <%= astro.total_time_space %></li>
+    <li>Missions: <% astro.missions.each do |mission| %></li> 
+        <ul>
+          <li><%= mission.title %></li>
+        </ul>
+    <% end%>
+  </ul>
+<% end %>
+
+<p>Average Age: <%= @astronaut_average_age.round %>

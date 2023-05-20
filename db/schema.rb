@@ -17,8 +17,8 @@ ActiveRecord::Schema[7.0].define(version: 2018_09_04_152506) do
   create_table "astronaut_missions", force: :cascade do |t|
     t.bigint "astronaut_id"
     t.bigint "mission_id"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["astronaut_id"], name: "index_astronaut_missions_on_astronaut_id"
     t.index ["mission_id"], name: "index_astronaut_missions_on_mission_id"
   end
@@ -27,15 +27,15 @@ ActiveRecord::Schema[7.0].define(version: 2018_09_04_152506) do
     t.string "name"
     t.integer "age"
     t.string "job"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "missions", force: :cascade do |t|
     t.string "title"
     t.integer "time_in_space"
-    t.datetime "created_at", precision: nil, null: false
-    t.datetime "updated_at", precision: nil, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "astronaut_missions", "astronauts"
